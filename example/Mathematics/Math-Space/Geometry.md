@@ -1,6 +1,0 @@
----
-title: Geometry
----
-
-# Geometry
-...

@@ -5,7 +5,7 @@ lib/
 include/
 share/
 lib64
-
+static/data/
 __pycache__
 *.pyc
 

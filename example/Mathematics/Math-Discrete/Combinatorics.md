@@ -1,6 +1,0 @@
----
-title: Combinatorics
----
-
-# Combinatorics
-...

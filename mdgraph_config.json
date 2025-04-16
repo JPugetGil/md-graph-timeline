@@ -1,0 +1,10 @@
+{
+  "external_resources_level_detail": "hostname",
+  "graph_opts": {
+    "width": "100%",
+    "height": "95vh",
+    "heading": "",
+    "bgcolor": "#2e2e2e",
+    "font_color": "#ffffff"
+  }
+}

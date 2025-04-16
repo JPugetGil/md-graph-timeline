@@ -1,11 +1,9 @@
-import os
 import networkx as nx
 from pyvis.network import Network
-from mdfile import MdFile
 
 
 class GraphOptions():
-    
+
     def __init__(self, width, height, heading, bgcolor, font_color):
         self.width = width
         self.height = height
@@ -21,18 +19,22 @@ class GraphBuilder():
         self.graph_opts = graph_opts  # GraphOptions obj
         self.graph_out = graph_out    # output path for graph as HTML
 
-        self.net = Network( width=graph_opts.width, height=graph_opts.height, 
-                            heading=graph_opts.heading, bgcolor=graph_opts.bgcolor, 
-                            font_color=graph_opts.font_color )
+        self.net = Network(width=graph_opts.width, height=graph_opts.height,
+                           heading=graph_opts.heading, bgcolor=graph_opts.bgcolor,
+                           font_color=graph_opts.font_color)
         self.net.set_options(self.pyvis_opts)
 
-
     # build graph from parsed markdown pages
-    def build(self, pages):
+
+    def build(self, pages, resources):
         nx_graph = nx.Graph()
 
         for page in pages:
             nx_graph.add_node(page.uid, label=page.title)
+            for resource_uid in resources:
+                nx_graph.add_node(resource_uid.uid,
+                                  label=resource_uid.resource_path)
+                nx_graph.add_edge(resource_uid.uid, resource_uid.resource_path)
             for link_uid in page.mdlinks:
                 nx_graph.add_edge(page.uid, link_uid)
 
