@@ -1,5 +1,5 @@
 # md-graph
-Generate interactive 3D network graph from markdown link relationships.
+Generate a network graph file from markdown link relationships.
 
 ## Concept
 - Parse directory of markdown projects files to build link dictionary
@@ -59,10 +59,6 @@ graph LR
     A1 --> |url link| E2
     A3 --> |url link| E2
 ```
-
-## Intended Usage
-- GitHub Actions build step in a static site for my personal notes
-- ```python3 mdgraph/mdgraph.py```
 
 ## References
 - https://regexr.com/
