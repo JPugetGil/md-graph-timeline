@@ -36,7 +36,7 @@ def main():
     data = MdD3Graph(list(parsed_nodes), list(parsed_links))
 
     # write to file input_graph_data.json
-    file1 = open("./static/data/input_graph_data.json", 'w')
+    file1 = open(args.md_dir + "/input_graph_data.json", 'w')
     file1.write(str(data))
     file1.close()
 
