@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>3D Network Connection Graph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="3d-graph.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="network_graph.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.2/d3.min.js"></script>
+</head>
+
+<body>
+    <div id="chart-container"></div>
+    <div id="node-info"></div>
+    <div id="controls">
+        <div id="filters">
+            <label for="node-type">Node Type</label>
+            <select id="node-type" onchange="filterGraph(true)">
+                <option selected value="All">All</option>
+            </select>
+            <label for="node-group">Node Group</label>
+            <select id="node-group" onchange="filterGraph(true)" multiple>
+                <option selected value="All">All</option>
+            </select>
+            <label for="node-extension">Node Extension</label>
+            <select id="node-extension" onchange="filterGraph(true)" multiple>
+                <option selected value="All">All</option>
+            </select>
+            <label for="node-coloration">Node Coloration</label>
+            <select id="node-coloration" onchange="colorGraph(true)">
+                <option selected value="type">type</option>
+                <option value="group">group</option>
+            </select>
+            <label for="folder-filter">Folder filter</label>
+            <input type="text" id="folder-filter" placeholder="Filter by folder name...">
+            <span>
+                <label for="folder-filter-include-linked-nodes">Include linked nodes</label>
+                <input type="checkbox" id="folder-filter-include-linked-nodes" checked>
+            </span>
+            <button onclick="filterFolder()">Filter</button>
+        </div>
+    </div>
+    <div id="graph-info"></div>
+    <div id="version-graph"></div>
+    <script src="3d-graph.js"></script>
+    <script src="git_graph.js"></script>
+</body>
+
+</html>

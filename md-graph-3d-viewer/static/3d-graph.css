@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+}
+
+label:not(:first-child) {
+    margin-top: 1rem;
+}
+
+input+span {
+    margin-top: 1rem;
+}
+
+#node-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(100, 100, 100, 50);
+    margin: 1rem;
+    padding: 0.5rem;
+    max-width: 480px;
+}
+
+#graph-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(100, 100, 100, 50);
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+#version-graph {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(100, 100, 100, 50);
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+#screenshot-util {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+#node-content {
+    max-height: 480px;
+    overflow: auto;
+}
+
+#controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(100, 100, 100, 50);
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+#node-info-header {
+    display: flex;
+}
+
+#close-button {
+    margin-left: auto;
+}
