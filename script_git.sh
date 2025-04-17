@@ -6,6 +6,13 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
+# Log optional environment variables for the commit depth
+if [ -n "$GIT_COMMIT_DEPTH" ]; then
+  echo "GIT_COMMIT_DEPTH is set to $GIT_COMMIT_DEPTH"
+else
+  echo "GIT_COMMIT_DEPTH is not set, using default value."
+fi
+
 git_repository="$1"
 
 # Check if the provided link is a valid Git repository.
@@ -16,8 +23,8 @@ fi
 
 # Clone the Git repository.
 repo_path=$(basename "$git_repository" .git)
-git clone "$git_repository" "$repo_path" || {
-  echo "Error: Failed to clone the repository."
+git clone --depth "${GIT_COMMIT_DEPTH:-1}" "$git_repository" "$repo_path" || {
+  echo "Error: Failed to clone the repository with depth ${GIT_COMMIT_DEPTH:-1}."
   exit 1
 }
 
