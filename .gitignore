@@ -10,3 +10,4 @@ __pycache__
 *.pyc
 
 .vscode/
+md-graph-3d-viewer/static/data/
